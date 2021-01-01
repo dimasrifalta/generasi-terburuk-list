@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import TableComponets from '../components/TableComponets';
+import { connect } from 'react-redux';
+import { getUsersList, deleteData } from '../actions/userAction';
 
-export default class HomeContainer extends Component {
+class HomeContainer extends Component {
+  componentDidMount() {
+    this.props.dispatch(getUsersList());
+    this.props.dispatch(deleteData());
+  }
   render() {
     return (
       <Container>
-        <TableComponets users={this.props.users} />
+        <TableComponets />
       </Container>
     );
   }
 }
+
+export default connect()(HomeContainer);
