@@ -12,7 +12,7 @@ let initialState = {
   getResponDataUser: false,
   errorResponDataUser: false,
 
-  title: 'Generasi Terburuk List',
+  title: 'Generasi Terburuk List V-1',
 };
 
 export const users = (state = initialState, action) => {
